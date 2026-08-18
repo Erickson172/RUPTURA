@@ -1,1 +1,479 @@
-D
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>App do Tigre AO</title>
+    <meta name="description" content="Assista ao vídeo">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .page {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        /* TÍTULO */
+        .video-title {
+            font-size: 24px;
+            line-height: 1.35;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: #fff;
+        }
+
+        /* INFORMAÇÕES */
+        .video-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* VÍDEO */
+        .video-container {
+            width: 100%;
+            max-width: 430px;
+            aspect-ratio: 9 / 16;
+            position: relative;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* AÇÕES */
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 16px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #303030;
+        }
+
+        .action-btn {
+            border: none;
+            background: #272727;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 22px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .action-btn:hover {
+            background: #3a3a3a;
+        }
+
+        /* DESCRIÇÃO */
+        .description {
+            background: #1f1f1f;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #ddd;
+        }
+
+        .description-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        /* COMENTÁRIOS */
+        .comments-section {
+            margin-top: 30px;
+        }
+
+        .comments-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .comments-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .comments-count {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* COMENTÁRIO */
+        .comment {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #444;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-name {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        .comment-text {
+            margin: 0;
+            color: #ddd;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .comment-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 9px;
+        }
+
+        .comment-action {
+            color: #aaa;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .comment-action:hover {
+            color: #fff;
+        }
+
+        /* BOTÃO MAIS COMENTÁRIOS */
+        .more-comments {
+            width: 100%;
+            padding: 13px;
+            background: transparent;
+            border: 1px solid #444;
+            border-radius: 22px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .more-comments:hover {
+            background: #272727;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 16px 12px 45px;
+            }
+
+            .video-title {
+                font-size: 19px;
+            }
+
+            .video-info {
+                font-size: 13px;
+            }
+
+            .video-container {
+                max-width: 100%;
+                border-radius: 8px;
+            }
+
+            .actions {
+                overflow-x: auto;
+            }
+
+            .action-btn {
+                white-space: nowrap;
+            }
+
+            .description {
+                border-radius: 10px;
+            }
+
+            .comments-header h2 {
+                font-size: 18px;
+            }
+
+            .comment {
+                gap: 10px;
+            }
+
+            .avatar {
+                width: 38px;
+                height: 38px;
+                min-width: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- TÍTULO -->
+        <h1 class="video-title">
+            ASSISTA AO VÍDEO ABAIXO PARA VER COMO FUNCIONA
+        </h1>
+
+        <!-- INFORMAÇÕES -->
+        <div class="video-info">
+            <span>1,2 mil visualizações</span>
+            <span>Hoje</span>
+        </div>
+
+        <!-- VÍDEO -->
+        <div class="video-container">
+
+            <iframe
+                id="panda-842386fe-0d66-4743-b377-016ed0afefed"
+                src="https://player-vz-abc8d156-dd5.tv.pandavideo.com.br/embed/?v=842386fe-0d66-4743-b377-016ed0afefed"
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+                fetchpriority="high">
+            </iframe>
+
+        </div>
+
+        <!-- AÇÕES -->
+        <div class="actions">
+
+            <button class="action-btn" id="likeBtn">
+                👍 Gostei
+            </button>
+
+            <button class="action-btn">
+                ↗ Compartilhar
+            </button>
+
+        </div>
+
+        <!-- DESCRIÇÃO -->
+        <div class="description">
+
+            <div class="description-title">
+                Sobre este vídeo
+            </div>
+
+            Assista ao vídeo completo para conhecer todos os detalhes e acompanhar as informações apresentadas.
+
+        </div>
+
+        <!-- COMENTÁRIOS -->
+        <section class="comments-section">
+
+            <div class="comments-header">
+
+                <h2>Comentários</h2>
+
+                <span class="comments-count">
+                    24 comentários
+                </span>
+
+            </div>
+
+            <!-- COMENTÁRIO 1 -->
+            <div class="comment">
+
+                <div class="avatar">
+                    J
+                </div>
+
+                <div class="comment-content">
+
+                    <div class="comment-name">
+                        João Manuel
+                        <span class="comment-time">há 2 horas</span>
+                    </div>
+
+                    <p class="comment-text">
+                        Muito interessante o vídeo. Assisti até ao final para entender melhor.
+                    </p>
+
+                    <div class="comment-actions">
+                        <span class="comment-action">👍 12</span>
+                        <span class="comment-action">Responder</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- COMENTÁRIO 2 -->
+            <div class="comment">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div class="comment-content">
+
+                    <div class="comment-name">
+                        Ana Maria
+                        <span class="comment-time">há 3 horas</span>
+                    </div>
+
+                    <p class="comment-text">
+                        Gostei bastante da explicação. O vídeo está bem explicado.
+                    </p>
+
+                    <div class="comment-actions">
+                        <span class="comment-action">👍 8</span>
+                        <span class="comment-action">Responder</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- COMENTÁRIO 3 -->
+            <div class="comment">
+
+                <div class="avatar">
+                    D
+                </div>
+
+                <div class="comment-content">
+
+                    <div class="comment-name">
+                        Domingos
+                        <span class="comment-time">há 5 horas</span>
+                    </div>
+
+                    <p class="comment-text">
+                        Acabei de assistir. Muito bom conteúdo!
+                    </p>
+
+                    <div class="comment-actions">
+                        <span class="comment-action">👍 5</span>
+                        <span class="comment-action">Responder</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- COMENTÁRIO 4 -->
+            <div class="comment">
+
+                <div class="avatar">
+                    E
+                </div>
+
+                <div class="comment-content">
+
+                    <div class="comment-name">
+                        Edna
+                        <span class="comment-time">há 6 horas</span>
+                    </div>
+
+                    <p class="comment-text">
+                        Informação muito clara. Obrigada por compartilhar.
+                    </p>
+
+                    <div class="comment-actions">
+                        <span class="comment-action">👍 7</span>
+                        <span class="comment-action">Responder</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="more-comments" id="moreComments">
+                Mostrar mais comentários
+            </button>
+
+        </section>
+
+    </main>
+
+    <script>
+
+        // BOTÃO GOSTEI
+        const likeBtn = document.getElementById("likeBtn");
+
+        likeBtn.addEventListener("click", function () {
+
+            if (likeBtn.dataset.liked === "true") {
+
+                likeBtn.innerHTML = "👍 Gostei";
+                likeBtn.dataset.liked = "false";
+
+            } else {
+
+                likeBtn.innerHTML = "👍 Curtido";
+                likeBtn.dataset.liked = "true";
+
+            }
+
+        });
+
+        // BOTÃO MOSTRAR MAIS
+        const moreComments = document.getElementById("moreComments");
+
+        moreComments.addEventListener("click", function () {
+
+            moreComments.innerText = "Não há mais comentários";
+
+        });
+
+    </script>
+
+</body>
+</html>
