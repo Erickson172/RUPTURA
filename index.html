@@ -44,7 +44,7 @@
 
 
     <!-- =========================================
-         GOOGLE FONTS
+         FONTES
     ========================================= -->
 
     <link
@@ -98,7 +98,6 @@
         .titulo-topo {
 
             width: 100%;
-
             text-align: center;
 
             padding:
@@ -293,11 +292,11 @@
 
             background: #000;
 
+            flex-shrink: 0;
+
             box-shadow:
                 0 5px 20px
                 rgba(0,0,0,.7);
-
-            flex-shrink: 0;
 
         }
 
@@ -452,6 +451,10 @@
             overflow: hidden;
 
             background: #222;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0,0,0,.5);
 
         }
 
@@ -652,11 +655,11 @@
 
         .comment-avatar {
 
-            min-width: 40px;
+            min-width: 42px;
 
-            width: 40px;
+            width: 42px;
 
-            height: 40px;
+            height: 42px;
 
             border-radius: 50%;
 
@@ -670,7 +673,7 @@
 
             box-shadow:
                 0 3px 10px
-                rgba(0,0,0,.5);
+                rgba(0,0,0,.6);
 
         }
 
@@ -1208,7 +1211,7 @@
 
 
             <!-- =========================================
-                 INTERFACE
+                 INTERFACE DA LIVE
             ========================================= -->
 
             <div class="live-ui">
@@ -1220,7 +1223,7 @@
 
                     <div class="avatar-principal">
 
-                        <!-- SUA IMAGEM -->
+                        <!-- SUA IMAGEM / LOGO -->
                         <img
                             src="logo-sou-angolano.png"
                             alt="Sou Angolano"
@@ -1253,13 +1256,15 @@
                 <!-- RANKING -->
 
                 <div class="ranking">
+
                     🔥 Ranking semanal
+
                 </div>
 
 
 
                 <!-- =========================================
-                     TOPO DIREITO - 3 PESSOAS FICTÍCIAS
+                     3 PESSOAS FICTÍCIAS REALISTAS
                 ========================================= -->
 
                 <div class="top-right">
@@ -1271,8 +1276,8 @@
                         <div class="mini-avatar">
 
                             <img
-                                src="https://api.dicebear.com/9.x/personas/svg?seed=AngolaLive1"
-                                alt="Participante fictício"
+                                src="https://thispersondoesnotexist.com/?live-person-1"
+                                alt="Pessoa fictícia"
                             >
 
                         </div>
@@ -1281,8 +1286,8 @@
                         <div class="mini-avatar">
 
                             <img
-                                src="https://api.dicebear.com/9.x/personas/svg?seed=AngolaLive2"
-                                alt="Participante fictício"
+                                src="https://thispersondoesnotexist.com/?live-person-2"
+                                alt="Pessoa fictícia"
                             >
 
                         </div>
@@ -1291,14 +1296,15 @@
                         <div class="mini-avatar">
 
                             <img
-                                src="https://api.dicebear.com/9.x/personas/svg?seed=AngolaLive3"
-                                alt="Participante fictício"
+                                src="https://thispersondoesnotexist.com/?live-person-3"
+                                alt="Pessoa fictícia"
                             >
 
                         </div>
 
 
                     </div>
+
 
 
                     <div class="viewer-count">
@@ -1314,6 +1320,7 @@
                         ×
                     </div>
 
+
                 </div>
 
 
@@ -1321,7 +1328,9 @@
                 <!-- EXPLORAR -->
 
                 <div class="explore">
+
                     🟣 Explorar ›
+
                 </div>
 
 
@@ -1332,7 +1341,9 @@
 
                     <div class="live-text">
 
-                        <strong>LIVE</strong>
+                        <strong>
+                            LIVE
+                        </strong>
 
                         <span>
                             Junte-se a nós!
@@ -1342,14 +1353,18 @@
 
 
                     <div class="tiktok-symbol">
+
                         🎵
+
                     </div>
 
                 </div>
 
 
 
-                <!-- COMENTÁRIOS -->
+                <!-- =========================================
+                     COMENTÁRIOS DINÂMICOS
+                ========================================= -->
 
                 <div
                     id="commentsContainer"
@@ -1358,7 +1373,9 @@
 
 
 
-                <!-- CORAÇÕES -->
+                <!-- =========================================
+                     CORAÇÕES
+                ========================================= -->
 
                 <div
                     id="heartsContainer"
@@ -1367,14 +1384,19 @@
 
 
 
-                <!-- BARRA INFERIOR -->
+                <!-- =========================================
+                     BARRA INFERIOR
+                ========================================= -->
 
                 <div class="bottom-ui">
 
 
                     <div class="comment-input">
+
                         Adicionar comentário...
+
                     </div>
+
 
 
                     <div class="actions">
@@ -1467,7 +1489,10 @@
 
 
         /* =========================================
-           COMENTÁRIOS COM AVATARES FICTÍCIOS
+           COMENTÁRIOS
+
+           AVATARES:
+           Rostos humanos fictícios gerados por IA
         ========================================= */
 
         const comments = [
@@ -1475,94 +1500,95 @@
             {
                 name: "joao_dias",
                 message: "Grande conteúdo! 🔥🔥",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=JoaoDias"
+                avatar: "https://thispersondoesnotexist.com/?comment-joao"
             },
 
             {
                 name: "maria_luisa",
                 message: "Qual é o primeiro passo?",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=MariaLuisa"
+                avatar: "https://thispersondoesnotexist.com/?comment-maria"
             },
 
             {
                 name: "investidor_27",
                 message: "Top demais! 💪",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=Investidor27"
+                avatar: "https://thispersondoesnotexist.com/?comment-investidor"
             },
 
             {
                 name: "sonia.moraes",
                 message: "Já apliquei e já tive resultado! ✅",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=SoniaMoraes"
+                avatar: "https://thispersondoesnotexist.com/?comment-sonia"
             },
 
             {
                 name: "pedro_santos",
                 message: "Entrei agora na LIVE 👋",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=PedroSantos"
+                avatar: "https://thispersondoesnotexist.com/?comment-pedro"
             },
 
             {
                 name: "antonio_kz",
                 message: "Finalmente alguém explicando isso bem!",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=AntonioKZ"
+                avatar: "https://thispersondoesnotexist.com/?comment-antonio"
             },
 
             {
                 name: "joana.angola",
                 message: "Estou acompanhando desde o início 🔥",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=JoanaAngola"
+                avatar: "https://thispersondoesnotexist.com/?comment-joana"
             },
 
             {
                 name: "manuel_ao",
                 message: "Isso mudou minha visão completamente!",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=ManuelAO"
+                avatar: "https://thispersondoesnotexist.com/?comment-manuel"
             },
 
             {
                 name: "carlos.invest",
                 message: "Muito valor nessa LIVE 👏",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=CarlosInvest"
+                avatar: "https://thispersondoesnotexist.com/?comment-carlos"
             },
 
             {
                 name: "ana_maria",
                 message: "Pode explicar novamente essa parte?",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=AnaMaria"
+                avatar: "https://thispersondoesnotexist.com/?comment-ana"
             },
 
             {
                 name: "miguel.santos",
                 message: "Quem está assistindo até agora? 🔥",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=MiguelSantos"
+                avatar: "https://thispersondoesnotexist.com/?comment-miguel"
             },
 
             {
                 name: "lucas_ao",
                 message: "Conteúdo de outro nível! 🚀",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=LucasAO"
+                avatar: "https://thispersondoesnotexist.com/?comment-lucas"
             },
 
             {
                 name: "paulo_mendes",
                 message: "Estou aprendendo muito aqui!",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=PauloMendes"
+                avatar: "https://thispersondoesnotexist.com/?comment-paulo"
             },
 
             {
                 name: "fernanda_kz",
                 message: "Melhor LIVE que assisti hoje ❤️",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=FernandaKZ"
+                avatar: "https://thispersondoesnotexist.com/?comment-fernanda"
             },
 
             {
                 name: "ricardo_27",
                 message: "Partilhei com meus amigos! 🔥",
-                avatar: "https://api.dicebear.com/9.x/personas/svg?seed=Ricardo27"
+                avatar: "https://thispersondoesnotexist.com/?comment-ricardo"
             }
 
         ];
+
 
 
         let commentIndex = 0;
@@ -1580,6 +1606,7 @@
         ========================================= */
 
         function addComment() {
+
 
             const data =
                 comments[commentIndex];
@@ -1599,7 +1626,7 @@
 
                     <img
                         src="${data.avatar}"
-                        alt="${data.name}"
+                        alt="Foto de perfil fictícia"
                     >
 
                 </div>
@@ -1608,12 +1635,16 @@
                 <div class="comment-body">
 
                     <div class="comment-name">
+
                         ${data.name}
+
                     </div>
 
 
                     <div class="comment-message">
+
                         ${data.message}
+
                     </div>
 
                 </div>
@@ -1633,6 +1664,7 @@
                 commentsContainer.children.length > 5
             ) {
 
+
                 const firstComment =
                     commentsContainer.firstElementChild;
 
@@ -1651,6 +1683,7 @@
             }
 
 
+
             commentIndex++;
 
 
@@ -1666,7 +1699,9 @@
 
 
 
-        /* Primeiro comentário */
+        /* =========================================
+           PRIMEIRO COMENTÁRIO
+        ========================================= */
 
         setTimeout(
             addComment,
@@ -1675,7 +1710,9 @@
 
 
 
-        /* Novo comentário */
+        /* =========================================
+           NOVOS COMENTÁRIOS
+        ========================================= */
 
         setInterval(
             addComment,
@@ -1697,7 +1734,9 @@
         let viewers = 2300;
 
 
+
         function updateViewers() {
+
 
             const variation =
                 Math.floor(
@@ -1708,6 +1747,9 @@
             viewers += variation;
 
 
+
+            /* Limite mínimo */
+
             if (viewers < 2100) {
 
                 viewers = 2100;
@@ -1715,11 +1757,15 @@
             }
 
 
+
+            /* Limite máximo */
+
             if (viewers > 4800) {
 
                 viewers = 4800;
 
             }
+
 
 
             viewerCount.textContent =
@@ -1739,6 +1785,7 @@
                     viewers;
 
         }
+
 
 
         setInterval(
@@ -1761,7 +1808,9 @@
         let likes = 3200;
 
 
+
         function updateLikes() {
+
 
             likes +=
                 Math.floor(
@@ -1786,6 +1835,7 @@
                     likes;
 
         }
+
 
 
         setInterval(
@@ -1816,6 +1866,7 @@
         ];
 
 
+
         function createHeart() {
 
 
@@ -1838,13 +1889,16 @@
                 ];
 
 
+
             const randomLeft =
                 Math.random() * 50;
+
 
 
             const randomMove =
                 (Math.random() * 100 - 50)
                 + "px";
+
 
 
             heart.style.left =
@@ -1871,6 +1925,7 @@
         }
 
 
+
         setInterval(
             createHeart,
             850
@@ -1880,11 +1935,14 @@
 
         /* =========================================
            DELAY DO BOTÃO
+
+           220000ms = 3 minutos e 40 segundos
         ========================================= */
 
         document.addEventListener(
             "DOMContentLoaded",
             function () {
+
 
                 const botao =
                     document.getElementById(
@@ -1899,6 +1957,7 @@
                 setTimeout(
                     function () {
 
+
                         botao.style.display =
                             "block";
 
@@ -1907,9 +1966,11 @@
                             "animate-bounce"
                         );
 
+
                     },
                     tempoDelay
                 );
+
 
             }
         );
