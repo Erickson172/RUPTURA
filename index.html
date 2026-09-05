@@ -74,10 +74,6 @@
         }
 
 
-        /* =========================================
-           VARIÁVEIS
-        ========================================= */
-
         :root {
 
             --gold-gradient:
@@ -101,8 +97,8 @@
             text-align: center;
 
             padding:
-                25px 15px
-                20px;
+                18px 15px
+                15px;
 
         }
 
@@ -112,7 +108,7 @@
             color: #dc2626;
 
             font-size:
-                clamp(24px, 3vw, 55px);
+                clamp(20px, 2.5vw, 42px);
 
             font-weight: 900;
 
@@ -124,7 +120,7 @@
 
 
         /* =========================================
-           CONTAINER DA LIVE
+           CONTAINER PRINCIPAL
         ========================================= */
 
         .live-container {
@@ -135,18 +131,257 @@
 
             justify-content: center;
 
-            padding: 0 15px;
+            padding: 0 12px;
 
         }
 
 
-        .live-screen {
+        .live-wrapper {
+
+            width: 100%;
+
+            max-width: 1450px;
+
+        }
+
+
+        /* =========================================
+           PARTE SUPERIOR
+        ========================================= */
+
+        .live-top {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding:
+                8px 5px
+                10px;
+
+            gap: 15px;
+
+        }
+
+
+        .top-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            min-width: 0;
+
+        }
+
+
+        .avatar-principal {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            border:
+                2px solid
+                rgba(255,255,255,.9);
+
+            background: #000;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .avatar-principal img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .profile-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+
+        }
+
+
+        .profile-name {
+
+            font-size:
+                clamp(11px, 1.2vw, 17px);
+
+            font-weight: 800;
+
+        }
+
+
+        .profile-likes {
+
+            color: #cfcfcf;
+
+            font-size:
+                clamp(8px, .9vw, 13px);
+
+        }
+
+
+        .follow-btn {
+
+            background: #ff174f;
+
+            border: none;
+
+            color: #fff;
+
+            padding:
+                7px 13px;
+
+            border-radius: 30px;
+
+            font-size:
+                clamp(9px, .9vw, 13px);
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+        }
+
+
+        .follow-btn:hover {
+
+            transform: scale(1.05);
+
+        }
+
+
+        .follow-btn.following {
+
+            background: #333;
+
+            color: #ddd;
+
+        }
+
+
+        /* =========================================
+           TOPO DIREITO
+        ========================================= */
+
+        .top-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .avatars-live {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+        .mini-avatar {
+
+            width: 30px;
+
+            height: 30px;
+
+            border-radius: 50%;
+
+            margin-left: -7px;
+
+            border: 2px solid #eab308;
+
+            overflow: hidden;
+
+            background: #222;
+
+        }
+
+
+        .mini-avatar:first-child {
+
+            margin-left: 0;
+
+        }
+
+
+        .mini-avatar img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .viewer-count {
+
+            font-size:
+                clamp(10px, 1vw, 15px);
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+        }
+
+
+        .close-live {
+
+            font-size:
+                clamp(22px, 2vw, 32px);
+
+            font-weight: 300;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================================
+           ÁREA DO VÍDEO
+        ========================================= */
+
+        .video-stage {
 
             position: relative;
 
             width: 100%;
-
-            max-width: 1500px;
 
             aspect-ratio: 16 / 9;
 
@@ -154,22 +389,18 @@
 
             overflow: hidden;
 
-            border-radius: 18px;
+            border-radius: 16px;
 
             box-shadow:
 
                 0 0 0 1px
                 rgba(255,255,255,.08),
 
-                0 25px 80px
+                0 15px 50px
                 rgba(0,0,0,.9);
 
         }
 
-
-        /* =========================================
-           VÍDEO
-        ========================================= */
 
         .video-background {
 
@@ -200,10 +431,10 @@
 
 
         /* =========================================
-           SOMBRAS
+           SOMBRAS DO VÍDEO
         ========================================= */
 
-        .live-screen::before {
+        .video-stage::before {
 
             content: "";
 
@@ -219,155 +450,15 @@
 
                 linear-gradient(
                     180deg,
-                    rgba(0,0,0,.45),
+                    rgba(0,0,0,.30),
                     transparent 20%
                 ),
 
                 linear-gradient(
                     0deg,
-                    rgba(0,0,0,.60),
-                    transparent 22%
-                ),
-
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,.25),
-                    transparent 20%,
-                    transparent 80%,
-                    rgba(0,0,0,.20)
+                    rgba(0,0,0,.55),
+                    transparent 25%
                 );
-
-        }
-
-
-        /* =========================================
-           INTERFACE
-        ========================================= */
-
-        .live-ui {
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: 3;
-
-            pointer-events: none;
-
-        }
-
-
-        /* =========================================
-           PERFIL SUPERIOR ESQUERDO
-        ========================================= */
-
-        .top-left {
-
-            position: absolute;
-
-            top: 2%;
-
-            left: 1.5%;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 7px;
-
-        }
-
-
-        .avatar-principal {
-
-            width: clamp(28px, 3vw, 45px);
-
-            height: clamp(28px, 3vw, 45px);
-
-            border-radius: 50%;
-
-            overflow: hidden;
-
-            border: 1.5px solid rgba(255,255,255,.9);
-
-            background: #000;
-
-            flex-shrink: 0;
-
-            box-shadow:
-                0 3px 12px
-                rgba(0,0,0,.7);
-
-        }
-
-
-        .avatar-principal img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-        }
-
-
-        .profile-info {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 2px;
-
-        }
-
-
-        .profile-name {
-
-            font-size:
-                clamp(9px, 1vw, 16px);
-
-            font-weight: 800;
-
-        }
-
-
-        .profile-likes {
-
-            color: #ddd;
-
-            font-size:
-                clamp(7px, .75vw, 12px);
-
-        }
-
-
-        .follow-btn {
-
-            margin-left: 2px;
-
-            background: #ff174f;
-
-            padding:
-
-                clamp(4px, .55vw, 8px)
-
-                clamp(8px, 1vw, 15px);
-
-            border-radius: 50px;
-
-            font-size:
-                clamp(8px, .8vw, 13px);
-
-            font-weight: 800;
-
-            box-shadow:
-
-                0 5px 15px
-                rgba(255,23,79,.35);
 
         }
 
@@ -380,9 +471,11 @@
 
             position: absolute;
 
-            top: 11%;
+            top: 12px;
 
-            left: 1.5%;
+            left: 12px;
+
+            z-index: 5;
 
             background:
                 rgba(0,0,0,.60);
@@ -391,112 +484,14 @@
                 blur(10px);
 
             padding:
+                6px 11px;
 
-                clamp(4px, .55vw, 8px)
-
-                clamp(7px, .9vw, 13px);
-
-            border-radius: 50px;
+            border-radius: 30px;
 
             font-size:
-                clamp(7px, .75vw, 12px);
+                clamp(8px, .9vw, 13px);
 
             font-weight: 700;
-
-        }
-
-
-        /* =========================================
-           TOPO DIREITO
-        ========================================= */
-
-        .top-right {
-
-            position: absolute;
-
-            top: 2%;
-
-            right: 1.5%;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-        }
-
-
-        .avatars-live {
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-
-        .mini-avatar {
-
-            width: clamp(22px, 2.5vw, 35px);
-
-            height: clamp(22px, 2.5vw, 35px);
-
-            border-radius: 50%;
-
-            margin-left: -6px;
-
-            border: 1.5px solid #eab308;
-
-            overflow: hidden;
-
-            background: #222;
-
-            box-shadow:
-                0 2px 8px
-                rgba(0,0,0,.5);
-
-        }
-
-
-        .mini-avatar:first-child {
-
-            margin-left: 0;
-
-        }
-
-
-        .mini-avatar img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-        }
-
-
-        .viewer-count {
-
-            font-size:
-                clamp(9px, 1vw, 16px);
-
-            font-weight: 700;
-
-            min-width: auto;
-
-        }
-
-
-        .close-live {
-
-            font-size:
-                clamp(18px, 2vw, 32px);
-
-            font-weight: 300;
 
         }
 
@@ -509,26 +504,25 @@
 
             position: absolute;
 
-            top: 11%;
+            top: 12px;
 
-            right: 1.5%;
+            right: 12px;
+
+            z-index: 5;
 
             background:
-                rgba(0,0,0,.55);
+                rgba(0,0,0,.60);
 
             backdrop-filter:
                 blur(10px);
 
             padding:
+                6px 11px;
 
-                clamp(4px, .55vw, 8px)
-
-                clamp(7px, .9vw, 13px);
-
-            border-radius: 50px;
+            border-radius: 30px;
 
             font-size:
-                clamp(7px, .75vw, 12px);
+                clamp(8px, .9vw, 13px);
 
             font-weight: 700;
 
@@ -543,31 +537,28 @@
 
             position: absolute;
 
-            top: 19%;
+            top: 50px;
 
-            right: 1.5%;
+            right: 12px;
+
+            z-index: 5;
 
             display: flex;
 
             align-items: center;
 
-            gap: 7px;
+            gap: 8px;
 
             padding:
-                clamp(6px, .8vw, 12px);
+                8px 10px;
 
             background:
-                rgba(8,8,12,.82);
+                rgba(8,8,12,.85);
 
             backdrop-filter:
-                blur(12px);
+                blur(10px);
 
             border-radius: 10px;
-
-            box-shadow:
-
-                0 8px 20px
-                rgba(0,0,0,.4);
 
         }
 
@@ -578,7 +569,7 @@
 
             flex-direction: column;
 
-            gap: 2px;
+            gap: 1px;
 
         }
 
@@ -586,7 +577,7 @@
         .live-text strong {
 
             font-size:
-                clamp(8px, .9vw, 14px);
+                clamp(9px, 1vw, 14px);
 
         }
 
@@ -594,7 +585,7 @@
         .live-text span {
 
             font-size:
-                clamp(6px, .65vw, 10px);
+                clamp(7px, .8vw, 11px);
 
             color: #ddd;
 
@@ -604,7 +595,7 @@
         .tiktok-symbol {
 
             font-size:
-                clamp(17px, 2vw, 30px);
+                clamp(18px, 2vw, 30px);
 
         }
 
@@ -617,17 +608,21 @@
 
             position: absolute;
 
-            left: 1.5%;
+            z-index: 6;
 
-            bottom: 13%;
+            left: 12px;
 
-            width: 32%;
+            bottom: 18px;
+
+            width: 28%;
 
             display: flex;
 
             flex-direction: column;
 
-            gap: 6px;
+            gap: 5px;
+
+            pointer-events: none;
 
         }
 
@@ -643,22 +638,22 @@
             opacity: 0;
 
             transform:
-                translateY(12px);
+                translateY(10px);
 
             animation:
                 commentAppear
-                .5s ease forwards;
+                .4s ease forwards;
 
         }
 
 
         .comment-avatar {
 
-            min-width: clamp(22px, 2.4vw, 34px);
+            min-width: 26px;
 
-            width: clamp(22px, 2.4vw, 34px);
+            width: 26px;
 
-            height: clamp(22px, 2.4vw, 34px);
+            height: 26px;
 
             border-radius: 50%;
 
@@ -670,9 +665,7 @@
                 1px solid
                 rgba(255,255,255,.4);
 
-            box-shadow:
-                0 2px 7px
-                rgba(0,0,0,.6);
+            flex-shrink: 0;
 
         }
 
@@ -698,35 +691,36 @@
 
             gap: 1px;
 
+            max-width: 100%;
+
         }
 
 
         .comment-name {
 
-            color: #c7c7c7;
+            color: #d0d0d0;
 
             font-size:
-                clamp(7px, .75vw, 12px);
+                clamp(7px, .75vw, 11px);
 
-            font-weight: 600;
+            font-weight: 700;
 
         }
 
 
         .comment-message {
 
-            color: white;
+            color: #fff;
 
             font-size:
-                clamp(8px, .85vw, 14px);
+                clamp(8px, .85vw, 13px);
 
             font-weight: 500;
 
-            line-height: 1.2;
+            line-height: 1.15;
 
             text-shadow:
-
-                0 2px 6px
+                0 1px 4px
                 rgba(0,0,0,.9);
 
         }
@@ -750,7 +744,7 @@
 
             animation:
                 commentRemove
-                .4s ease forwards;
+                .3s ease forwards;
 
         }
 
@@ -777,15 +771,19 @@
 
             position: absolute;
 
-            right: 1.5%;
+            z-index: 6;
 
-            bottom: 12%;
+            right: 10px;
 
-            width: 45px;
+            bottom: 12px;
 
-            height: 48%;
+            width: 55px;
+
+            height: 70%;
 
             overflow: hidden;
+
+            pointer-events: none;
 
         }
 
@@ -797,16 +795,15 @@
             bottom: 0;
 
             font-size:
-                clamp(16px, 2vw, 32px);
+                clamp(18px, 2vw, 35px);
 
             animation:
                 heartFloat
-                4s linear forwards;
+                3.5s linear forwards;
 
             filter:
-
                 drop-shadow(
-                    0 3px 7px
+                    0 3px 6px
                     rgba(0,0,0,.5)
                 );
 
@@ -818,7 +815,6 @@
             0% {
 
                 transform:
-
                     translateY(0)
                     scale(.5);
 
@@ -832,7 +828,6 @@
                 opacity: 1;
 
                 transform:
-
                     translateY(-30px)
                     scale(1);
 
@@ -850,9 +845,9 @@
 
                 transform:
 
-                    translateY(-350px)
+                    translateY(-400px)
                     translateX(var(--move))
-                    scale(1.2);
+                    scale(1.3);
 
                 opacity: 0;
 
@@ -862,18 +857,95 @@
 
 
         /* =========================================
-           BARRA INFERIOR
+           ROSAS E PRESENTES
         ========================================= */
 
-        .bottom-ui {
+        .gifts-container {
 
             position: absolute;
 
-            bottom: 2%;
+            z-index: 7;
 
-            left: 1.5%;
+            right: 60px;
 
-            right: 1.5%;
+            bottom: 10px;
+
+            width: 130px;
+
+            height: 70%;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+        .gift-animation {
+
+            position: absolute;
+
+            bottom: 0;
+
+            font-size:
+                clamp(25px, 3vw, 55px);
+
+            animation:
+                giftFloat
+                2.8s ease-out forwards;
+
+        }
+
+
+        @keyframes giftFloat {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(0)
+                    scale(.4)
+                    rotate(-10deg);
+
+            }
+
+
+            20% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(-30px)
+                    scale(1.2)
+                    rotate(10deg);
+
+            }
+
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+
+                    translateY(-300px)
+                    translateX(var(--gift-move))
+                    scale(1.4)
+                    rotate(25deg);
+
+            }
+
+        }
+
+
+        /* =========================================
+           PARTE INFERIOR
+        ========================================= */
+
+        .live-bottom {
+
+            width: 100%;
 
             display: flex;
 
@@ -881,33 +953,33 @@
 
             justify-content: space-between;
 
-            gap: 12px;
+            gap: 10px;
+
+            padding:
+                9px 4px
+                5px;
 
         }
 
 
         .comment-input {
 
-            width: 48%;
+            width: 40%;
 
             background:
-                rgba(30,30,30,.85);
-
-            backdrop-filter:
-                blur(12px);
+                rgba(35,35,35,.95);
 
             padding:
+                9px 15px;
 
-                clamp(6px, .8vw, 12px)
-
-                clamp(10px, 1.2vw, 18px);
-
-            border-radius: 50px;
+            border-radius: 30px;
 
             color: #bdbdbd;
 
             font-size:
-                clamp(7px, .8vw, 13px);
+                clamp(9px, 1vw, 14px);
+
+            cursor: text;
 
         }
 
@@ -921,7 +993,7 @@
             align-items: center;
 
             gap:
-                clamp(7px, 1.2vw, 18px);
+                clamp(10px, 1.5vw, 22px);
 
             flex: 1;
 
@@ -941,7 +1013,21 @@
             color: #ddd;
 
             font-size:
-                clamp(6px, .65vw, 10px);
+                clamp(7px, .75vw, 11px);
+
+            cursor: pointer;
+
+            transition: .2s;
+
+            user-select: none;
+
+        }
+
+
+        .action:hover {
+
+            transform:
+                scale(1.12);
 
         }
 
@@ -949,7 +1035,15 @@
         .action-icon {
 
             font-size:
-                clamp(13px, 1.5vw, 25px);
+                clamp(18px, 2vw, 30px);
+
+        }
+
+
+        .action.active {
+
+            transform:
+                scale(1.18);
 
         }
 
@@ -968,11 +1062,11 @@
             max-width: 1000px;
 
             margin:
-                30px auto
+                25px auto
                 50px;
 
             padding:
-                22px 30px;
+                20px 30px;
 
             border: none;
 
@@ -984,7 +1078,7 @@
             color: #000;
 
             font-size:
-                clamp(17px, 2vw, 27px);
+                clamp(16px, 2vw, 26px);
 
             font-weight: 900;
 
@@ -1025,7 +1119,8 @@
 
         @keyframes bounce {
 
-            0%, 100% {
+            0%,
+            100% {
 
                 transform:
                     translateY(0);
@@ -1036,7 +1131,7 @@
             50% {
 
                 transform:
-                    translateY(-10px);
+                    translateY(-8px);
 
             }
 
@@ -1047,131 +1142,202 @@
            MOBILE
         ========================================= */
 
-        @media (max-width: 768px) {
+        @media(max-width:768px) {
 
             .live-container {
-                padding: 0 5px;
+                padding: 0 6px;
             }
 
 
-            .live-screen {
-                border-radius: 10px;
+            .live-top {
+
+                padding:
+                    5px 2px
+                    7px;
+
+                gap: 6px;
+
             }
 
 
-            .top-left {
-                top: 1.5%;
-                left: 1.5%;
-                gap: 4px;
+            .avatar-principal {
+
+                width: 32px;
+                height: 32px;
+
             }
 
 
-            .top-right {
-                top: 1.5%;
-                right: 1.5%;
-                gap: 5px;
+            .mini-avatar {
+
+                width: 23px;
+                height: 23px;
+
             }
 
 
-            .ranking {
-                top: 10%;
-            }
+            .follow-btn {
 
+                padding:
+                    5px 8px;
 
-            .explore {
-                top: 10%;
-            }
+                font-size: 8px;
 
-
-            .live-badge {
-                top: 18%;
             }
 
 
             .comments {
 
-                width: 48%;
+                left: 7px;
 
-                bottom: 15%;
+                bottom: 8px;
+
+                width: 45%;
 
                 gap: 4px;
 
             }
 
 
-            .bottom-ui {
+            .comment-avatar {
 
-                bottom: 1.5%;
+                min-width: 20px;
 
-                gap: 5px;
+                width: 20px;
+                height: 20px;
+
+            }
+
+
+            .comment-name {
+
+                font-size: 7px;
+
+            }
+
+
+            .comment-message {
+
+                font-size: 8px;
+
+            }
+
+
+            .ranking {
+
+                top: 7px;
+                left: 7px;
+
+                padding:
+                    4px 7px;
+
+            }
+
+
+            .explore {
+
+                top: 7px;
+                right: 7px;
+
+                padding:
+                    4px 7px;
+
+            }
+
+
+            .live-badge {
+
+                top: 35px;
+                right: 7px;
+
+                padding: 5px 7px;
+
+            }
+
+
+            .live-bottom {
+
+                padding-top: 6px;
 
             }
 
 
             .comment-input {
 
-                width: 45%;
+                width: 40%;
+
+                padding:
+                    7px 10px;
+
+                font-size: 8px;
 
             }
 
 
             .actions {
 
-                gap: 6px;
+                gap: 9px;
+
+            }
+
+
+            .action-icon {
+
+                font-size: 17px;
+
+            }
+
+
+            .action {
+
+                font-size: 7px;
 
             }
 
         }
 
 
-        @media (max-width: 480px) {
+        @media(max-width:480px) {
 
             .titulo-topo {
 
                 padding:
-                    15px 8px;
+                    12px 8px;
 
             }
 
 
             .titulo-topo h2 {
 
-                font-size: 20px;
+                font-size: 18px;
+
+            }
+
+
+            .profile-name {
+
+                font-size: 9px;
 
             }
 
 
             .profile-likes {
 
-                display: none;
+                font-size: 7px;
 
             }
 
 
-            .ranking {
+            .viewer-count {
 
-                font-size: 6px;
-
-            }
-
-
-            .explore {
-
-                font-size: 6px;
+                font-size: 8px;
 
             }
 
 
-            .live-badge {
+            .close-live {
 
-                padding: 4px;
-
-            }
-
-
-            .live-text span {
-
-                display: none;
+                font-size: 22px;
 
             }
 
@@ -1180,19 +1346,10 @@
 
                 width: 52%;
 
-                bottom: 14%;
-
             }
 
 
-            .action:nth-child(2) {
-
-                display: none;
-
-            }
-
-
-            .action:nth-child(3) {
+            .action:nth-child(2) span {
 
                 display: none;
 
@@ -1222,37 +1379,19 @@
 
 
     <!-- =========================================
-         LIVE CONTAINER
+         LIVE
     ========================================= -->
 
     <div class="live-container">
 
-        <div class="live-screen">
+        <div class="live-wrapper">
 
 
             <!-- =========================================
-                 VÍDEO PANDA
+                 PARTE SUPERIOR
             ========================================= -->
 
-            <div class="video-background">
-
-                <iframe
-                    id="panda-4096f280-4088-4fbf-b9de-9c3f23332beb"
-                    src="https://player-vz-abc8d156-dd5.tv.pandavideo.com.br/embed/?v=4096f280-4088-4fbf-b9de-9c3f23332beb"
-                    style="border: none;"
-                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                    allowfullscreen
-                    fetchpriority="high">
-                </iframe>
-
-            </div>
-
-
-            <!-- =========================================
-                 INTERFACE DA LIVE
-            ========================================= -->
-
-            <div class="live-ui">
+            <div class="live-top">
 
 
                 <!-- PERFIL PRINCIPAL -->
@@ -1261,6 +1400,7 @@
 
                     <div class="avatar-principal">
 
+                        <!-- NÃO ALTERAR ESTA IMAGEM -->
                         <img
                             src="logo-sou-angolano.png"
                             alt="Sou Angolano"
@@ -1276,15 +1416,107 @@
                         </div>
 
                         <div class="profile-likes">
-                            ❤ <span id="likesCount">3.2K</span> curtidas
+
+                            ❤
+                            <span id="likesCount">
+                                3.2K
+                            </span>
+
+                            curtidas
+
                         </div>
 
                     </div>
 
 
-                    <div class="follow-btn">
+                    <button
+                        class="follow-btn"
+                        id="followBtn">
+
                         + Seguir
+
+                    </button>
+
+                </div>
+
+
+                <!-- TOPO DIREITO -->
+
+                <div class="top-right">
+
+
+                    <div class="avatars-live">
+
+                        <div class="mini-avatar">
+
+                            <img
+                                src="https://thispersondoesnotexist.com/?live1"
+                                alt="Perfil"
+                            >
+
+                        </div>
+
+
+                        <div class="mini-avatar">
+
+                            <img
+                                src="https://thispersondoesnotexist.com/?live2"
+                                alt="Perfil"
+                            >
+
+                        </div>
+
+
+                        <div class="mini-avatar">
+
+                            <img
+                                src="https://thispersondoesnotexist.com/?live3"
+                                alt="Perfil"
+                            >
+
+                        </div>
+
                     </div>
+
+
+                    <div class="viewer-count">
+
+                        👤
+
+                        <span id="viewerCount">
+                            2.3K
+                        </span>
+
+                    </div>
+
+
+                    <div class="close-live">
+                        ×
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================================
+                 VÍDEO
+            ========================================= -->
+
+            <div class="video-stage">
+
+
+                <div class="video-background">
+
+                    <iframe
+                        id="panda-4096f280-4088-4fbf-b9de-9c3f23332beb"
+                        src="https://player-vz-abc8d156-dd5.tv.pandavideo.com.br/embed/?v=4096f280-4088-4fbf-b9de-9c3f23332beb"
+                        style="border:none;"
+                        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                        allowfullscreen
+                        fetchpriority="high">
+                    </iframe>
 
                 </div>
 
@@ -1298,66 +1530,6 @@
                 </div>
 
 
-                <!-- =========================================
-                     AVATARES SUPERIORES
-                ========================================= -->
-
-                <div class="top-right">
-
-
-                    <div class="avatars-live">
-
-
-                        <div class="mini-avatar">
-
-                            <img
-                                src="https://thispersondoesnotexist.com/?live-person-1"
-                                alt="Pessoa fictícia"
-                            >
-
-                        </div>
-
-
-                        <div class="mini-avatar">
-
-                            <img
-                                src="https://thispersondoesnotexist.com/?live-person-2"
-                                alt="Pessoa fictícia"
-                            >
-
-                        </div>
-
-
-                        <div class="mini-avatar">
-
-                            <img
-                                src="https://thispersondoesnotexist.com/?live-person-3"
-                                alt="Pessoa fictícia"
-                            >
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="viewer-count">
-
-                        👤 <span id="viewerCount">
-                            2.3K
-                        </span>
-
-                    </div>
-
-
-                    <div class="close-live">
-                        ×
-                    </div>
-
-
-                </div>
-
-
                 <!-- EXPLORAR -->
 
                 <div class="explore">
@@ -1367,10 +1539,9 @@
                 </div>
 
 
-                <!-- BADGE LIVE -->
+                <!-- BADGE -->
 
                 <div class="live-badge">
-
 
                     <div class="live-text">
 
@@ -1386,18 +1557,13 @@
 
 
                     <div class="tiktok-symbol">
-
                         🎵
-
                     </div>
-
 
                 </div>
 
 
-                <!-- =========================================
-                     COMENTÁRIOS
-                ========================================= -->
+                <!-- COMENTÁRIOS -->
 
                 <div
                     id="commentsContainer"
@@ -1405,9 +1571,7 @@
                 </div>
 
 
-                <!-- =========================================
-                     CORAÇÕES
-                ========================================= -->
+                <!-- CORAÇÕES -->
 
                 <div
                     id="heartsContainer"
@@ -1415,82 +1579,100 @@
                 </div>
 
 
-                <!-- =========================================
-                     BARRA INFERIOR
-                ========================================= -->
+                <!-- ROSAS E PRESENTES -->
 
-                <div class="bottom-ui">
+                <div
+                    id="giftsContainer"
+                    class="gifts-container">
+                </div>
 
 
-                    <div class="comment-input">
+            </div>
 
-                        Adicionar comentário...
+
+            <!-- =========================================
+                 PARTE INFERIOR
+            ========================================= -->
+
+            <div class="live-bottom">
+
+
+                <div
+                    class="comment-input"
+                    id="commentInput">
+
+                    Adicionar comentário...
+
+                </div>
+
+
+                <div class="actions">
+
+
+                    <div
+                        class="action"
+                        id="heartAction">
+
+                        <div class="action-icon">
+                            ❤️
+                        </div>
+
+                        <span>
+                            Curtir
+                        </span>
 
                     </div>
 
 
-                    <div class="actions">
+                    <div
+                        class="action"
+                        id="roseAction">
 
-
-                        <div class="action">
-
-                            <div class="action-icon">
-                                👥
-                            </div>
-
-                            <span>
-                                Vários
-                            </span>
-
+                        <div class="action-icon">
+                            🌹
                         </div>
 
+                        <span>
+                            Rosa
+                        </span>
 
-                        <div class="action">
+                    </div>
 
-                            <div class="action-icon">
-                                🌹
-                            </div>
 
-                            <span>
-                                Rosa
-                            </span>
+                    <div
+                        class="action"
+                        id="giftAction">
 
+                        <div class="action-icon">
+                            🎁
                         </div>
 
+                        <span>
+                            Presente
+                        </span>
 
-                        <div class="action">
+                    </div>
 
-                            <div class="action-icon">
-                                🎁
-                            </div>
 
-                            <span>
-                                Presente
-                            </span>
+                    <div
+                        class="action"
+                        id="shareAction">
 
+                        <div class="action-icon">
+                            ↗
                         </div>
 
-
-                        <div class="action">
-
-                            <div class="action-icon">
-                                ↗
-                            </div>
-
-                            <span>
-                                Partilhar
-                            </span>
-
-                        </div>
-
+                        <span>
+                            Partilhar
+                        </span>
 
                     </div>
 
 
                 </div>
 
-
             </div>
+
 
         </div>
 
@@ -1498,7 +1680,7 @@
 
 
     <!-- =========================================
-         BOTÃO
+         BOTÃO DELAY
     ========================================= -->
 
     <button
@@ -1514,99 +1696,85 @@
 
 
         /* =========================================
-           COMENTÁRIOS
+           AVATARES DOS COMENTÁRIOS
         ========================================= */
+
+        const avatarBase =
+            "https://thispersondoesnotexist.com/";
+
 
         const comments = [
 
             {
                 name: "joao_dias",
                 message: "Grande conteúdo! 🔥🔥",
-                avatar: "https://thispersondoesnotexist.com/?comment-joao"
+                avatar: avatarBase + "?joao1"
             },
 
             {
                 name: "maria_luisa",
                 message: "Qual é o primeiro passo?",
-                avatar: "https://thispersondoesnotexist.com/?comment-maria"
+                avatar: avatarBase + "?maria2"
             },
 
             {
                 name: "investidor_27",
                 message: "Top demais! 💪",
-                avatar: "https://thispersondoesnotexist.com/?comment-investidor"
+                avatar: avatarBase + "?invest3"
             },
 
             {
                 name: "sonia.moraes",
-                message: "Já apliquei e já tive resultado! ✅",
-                avatar: "https://thispersondoesnotexist.com/?comment-sonia"
+                message: "Muito bom! 👏",
+                avatar: avatarBase + "?sonia4"
             },
 
             {
                 name: "pedro_santos",
                 message: "Entrei agora na LIVE 👋",
-                avatar: "https://thispersondoesnotexist.com/?comment-pedro"
+                avatar: avatarBase + "?pedro5"
             },
 
             {
                 name: "antonio_kz",
                 message: "Finalmente alguém explicando isso bem!",
-                avatar: "https://thispersondoesnotexist.com/?comment-antonio"
+                avatar: avatarBase + "?antonio6"
             },
 
             {
                 name: "joana.angola",
                 message: "Estou acompanhando desde o início 🔥",
-                avatar: "https://thispersondoesnotexist.com/?comment-joana"
+                avatar: avatarBase + "?joana7"
             },
 
             {
                 name: "manuel_ao",
-                message: "Isso mudou minha visão completamente!",
-                avatar: "https://thispersondoesnotexist.com/?comment-manuel"
+                message: "Isso mudou minha visão!",
+                avatar: avatarBase + "?manuel8"
             },
 
             {
                 name: "carlos.invest",
                 message: "Muito valor nessa LIVE 👏",
-                avatar: "https://thispersondoesnotexist.com/?comment-carlos"
+                avatar: avatarBase + "?carlos9"
             },
 
             {
                 name: "ana_maria",
-                message: "Pode explicar novamente essa parte?",
-                avatar: "https://thispersondoesnotexist.com/?comment-ana"
+                message: "Pode explicar novamente?",
+                avatar: avatarBase + "?ana10"
             },
 
             {
                 name: "miguel.santos",
                 message: "Quem está assistindo até agora? 🔥",
-                avatar: "https://thispersondoesnotexist.com/?comment-miguel"
+                avatar: avatarBase + "?miguel11"
             },
 
             {
                 name: "lucas_ao",
                 message: "Conteúdo de outro nível! 🚀",
-                avatar: "https://thispersondoesnotexist.com/?comment-lucas"
-            },
-
-            {
-                name: "paulo_mendes",
-                message: "Estou aprendendo muito aqui!",
-                avatar: "https://thispersondoesnotexist.com/?comment-paulo"
-            },
-
-            {
-                name: "fernanda_kz",
-                message: "Melhor LIVE que assisti hoje ❤️",
-                avatar: "https://thispersondoesnotexist.com/?comment-fernanda"
-            },
-
-            {
-                name: "ricardo_27",
-                message: "Partilhei com meus amigos! 🔥",
-                avatar: "https://thispersondoesnotexist.com/?comment-ricardo"
+                avatar: avatarBase + "?lucas12"
             }
 
         ];
@@ -1646,7 +1814,7 @@
 
                     <img
                         src="${data.avatar}"
-                        alt="Foto de perfil"
+                        alt="Perfil"
                     >
 
                 </div>
@@ -1655,16 +1823,11 @@
                 <div class="comment-body">
 
                     <div class="comment-name">
-
                         ${data.name}
-
                     </div>
 
-
                     <div class="comment-message">
-
                         ${data.message}
-
                     </div>
 
                 </div>
@@ -1677,12 +1840,11 @@
             );
 
 
-            /* Mantém apenas 5 comentários */
+            /* Mantém apenas 4 comentários */
 
             if (
-                commentsContainer.children.length > 5
+                commentsContainer.children.length > 4
             ) {
-
 
                 const firstComment =
                     commentsContainer.firstElementChild;
@@ -1693,11 +1855,14 @@
                 );
 
 
-                setTimeout(function () {
+                setTimeout(
+                    function () {
 
-                    firstComment.remove();
+                        firstComment.remove();
 
-                }, 400);
+                    },
+                    300
+                );
 
             }
 
@@ -1716,24 +1881,20 @@
         }
 
 
-        /* PRIMEIRO COMENTÁRIO */
-
         setTimeout(
             addComment,
-            1000
+            800
         );
 
 
-        /* NOVOS COMENTÁRIOS */
-
         setInterval(
             addComment,
-            3500
+            3000
         );
 
 
         /* =========================================
-           CONTADOR DE ESPECTADORES
+           ESPECTADORES
         ========================================= */
 
         const viewerCount =
@@ -1750,8 +1911,8 @@
 
             const variation =
                 Math.floor(
-                    Math.random() * 180
-                ) - 60;
+                    Math.random() * 100
+                ) - 30;
 
 
             viewers += variation;
@@ -1797,7 +1958,7 @@
 
 
         /* =========================================
-           CURTIDAS DINÂMICAS
+           CURTIDAS
         ========================================= */
 
         const likesCount =
@@ -1814,8 +1975,8 @@
 
             likes +=
                 Math.floor(
-                    Math.random() * 25
-                ) + 5;
+                    Math.random() * 15
+                ) + 3;
 
 
             likesCount.textContent =
@@ -1858,7 +2019,6 @@
             "❤️",
             "💕",
             "💗",
-            "❤️",
             "💖"
 
         ];
@@ -1886,22 +2046,19 @@
                 ];
 
 
-            const randomLeft =
-                Math.random() * 30;
-
-
-            const randomMove =
-                (Math.random() * 60 - 30)
+            heart.style.left =
+                Math.random() * 25
                 + "px";
 
 
-            heart.style.left =
-                randomLeft + "px";
-
-
             heart.style.setProperty(
+
                 "--move",
-                randomMove
+
+                (
+                    Math.random() * 60 - 30
+                ) + "px"
+
             );
 
 
@@ -1910,25 +2067,236 @@
             );
 
 
-            setTimeout(function () {
+            setTimeout(
+                function () {
 
-                heart.remove();
+                    heart.remove();
 
-            }, 4000);
+                },
+                3500
+            );
 
         }
 
 
         setInterval(
             createHeart,
-            850
+            1200
         );
+
+
+        /* =========================================
+           ROSAS E PRESENTES
+        ========================================= */
+
+        const giftsContainer =
+            document.getElementById(
+                "giftsContainer"
+            );
+
+
+        function createGift(
+            emoji
+        ) {
+
+
+            const gift =
+                document.createElement("div");
+
+
+            gift.className =
+                "gift-animation";
+
+
+            gift.textContent =
+                emoji;
+
+
+            gift.style.left =
+                Math.random() * 70
+                + "px";
+
+
+            gift.style.setProperty(
+
+                "--gift-move",
+
+                (
+                    Math.random() * 100 - 50
+                ) + "px"
+
+            );
+
+
+            giftsContainer.appendChild(
+                gift
+            );
+
+
+            setTimeout(
+                function () {
+
+                    gift.remove();
+
+                },
+                2800
+            );
+
+        }
+
+
+        /* =========================================
+           BOTÃO CURTIR
+        ========================================= */
+
+        document
+            .getElementById(
+                "heartAction"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    createHeart();
+                    createHeart();
+                    createHeart();
+
+                    likes += 10;
+
+                }
+            );
+
+
+        /* =========================================
+           BOTÃO ROSA
+        ========================================= */
+
+        document
+            .getElementById(
+                "roseAction"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    createGift("🌹");
+
+                }
+            );
+
+
+        /* =========================================
+           BOTÃO PRESENTE
+        ========================================= */
+
+        document
+            .getElementById(
+                "giftAction"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    createGift("🎁");
+
+                }
+            );
+
+
+        /* =========================================
+           BOTÃO SEGUIR
+        ========================================= */
+
+        document
+            .getElementById(
+                "followBtn"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    this.classList.toggle(
+                        "following"
+                    );
+
+
+                    if (
+                        this.classList.contains(
+                            "following"
+                        )
+                    ) {
+
+                        this.textContent =
+                            "✓ Seguindo";
+
+                    }
+
+                    else {
+
+                        this.textContent =
+                            "+ Seguir";
+
+                    }
+
+                }
+            );
+
+
+        /* =========================================
+           PARTILHAR
+        ========================================= */
+
+        document
+            .getElementById(
+                "shareAction"
+            )
+            .addEventListener(
+                "click",
+                async function () {
+
+                    if (
+                        navigator.share
+                    ) {
+
+                        try {
+
+                            await navigator.share({
+
+                                title:
+                                    "Sou Angolano",
+
+                                text:
+                                    "Assista esta LIVE!",
+
+                                url:
+                                    window.location.href
+
+                            });
+
+                        }
+
+                        catch (error) {
+
+                        }
+
+                    }
+
+                    else {
+
+                        alert(
+                            "Copie o link da página para partilhar."
+                        );
+
+                    }
+
+                }
+            );
 
 
         /* =========================================
            DELAY DO BOTÃO
 
-           220000ms = 3 minutos e 40 segundos
+           220000ms = 3min40s
         ========================================= */
 
         document.addEventListener(
@@ -1962,7 +2330,6 @@
                     },
                     tempoDelay
                 );
-
 
             }
         );
