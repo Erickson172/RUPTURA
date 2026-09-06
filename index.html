@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SOU ANGOLANO - Conhecimento vale Ouro</title>
 
+    <!-- UTMIFY PIXEL -->
+    <script>
+        window.pixelId = "69c2faeaebc40da953b4e47d";
 
-    
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute(
+            "src",
+            "https://cdn.utmify.com.br/scripts/pixel/pixel.js"
+        );
 
+        document.head.appendChild(a);
+    </script>
 
-    <!-- =========================================
-         FONTES
-    ========================================== -->
+    <!-- UTMIFY UTMS -->
+    <script
+        src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+        data-utmify-prevent-xcod-sck=""
+        data-utmify-prevent-subids=""
+        async
+        defer>
+    </script>
 
+    <!-- FONTES -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
+        rel="stylesheet">
 
     <style>
 
-        /* =========================================
+        /* =====================================
            RESET
-        ========================================== */
+        ===================================== */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
 
         body {
             font-family: "Inter", sans-serif;
@@ -41,260 +55,172 @@
             overflow-x: hidden;
         }
 
-
         :root {
-
             --pink: #ff174f;
 
-            --gold:
-                linear-gradient(
-                    135deg,
-                    #F8D308,
-                    #D4AF37,
-                    #F8D308
-                );
-
+            --gold: linear-gradient(
+                135deg,
+                #F8D308,
+                #D4AF37,
+                #F8D308
+            );
         }
 
 
-        /* =========================================
+        /* =====================================
            TÍTULO
-        ========================================== */
+        ===================================== */
 
         .titulo-topo {
-
             width: 100%;
-
             text-align: center;
-
             padding: 25px 15px 20px;
-
         }
-
 
         .titulo-topo h2 {
-
             color: #dc2626;
-
-            font-size:
-                clamp(22px, 3vw, 52px);
-
+            font-size: clamp(22px, 3vw, 52px);
             font-weight: 900;
-
             font-style: italic;
-
             text-transform: uppercase;
-
         }
 
 
-        /* =========================================
-           ESTRUTURA PRINCIPAL
-        ========================================== */
+        /* =====================================
+           CONTAINER
+        ===================================== */
 
         .live-container {
-
             width: 100%;
-
             display: flex;
-
             justify-content: center;
-
             padding: 0 15px 30px;
-
         }
-
 
         .live-wrapper {
-
             width: 100%;
-
             max-width: 1500px;
-
         }
 
 
-        /* =========================================
+        /* =====================================
            BARRA SUPERIOR
            FICA ACIMA DO VÍDEO
-        ========================================== */
+        ===================================== */
 
         .live-topbar {
-
             width: 100%;
+            min-height: 82px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            padding: 12px 5px 14px;
 
             gap: 20px;
 
+            padding: 10px 5px 15px;
         }
 
+
+        /* ESQUERDA */
 
         .top-left-group {
-
             display: flex;
-
             align-items: center;
-
             gap: 14px;
-
             min-width: 0;
-
         }
 
-
         .avatar-principal {
-
             width: 58px;
-
             height: 58px;
 
             border-radius: 50%;
-
             overflow: hidden;
 
-            border:
-                2px solid
-                rgba(255,255,255,.9);
+            border: 2px solid rgba(255,255,255,.9);
 
             flex-shrink: 0;
-
             background: #111;
-
         }
-
 
         .avatar-principal img {
-
             width: 100%;
-
             height: 100%;
-
             object-fit: cover;
-
             display: block;
-
         }
-
 
         .profile-info {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 3px;
-
             white-space: nowrap;
-
         }
-
 
         .profile-name {
-
-            font-size:
-                clamp(16px, 1.8vw, 29px);
-
+            font-size: clamp(16px, 1.8vw, 29px);
             font-weight: 800;
-
         }
-
 
         .profile-likes {
-
             color: #cfcfcf;
-
-            font-size:
-                clamp(12px, 1.3vw, 20px);
-
+            font-size: clamp(12px, 1.3vw, 20px);
         }
 
 
-        /* =========================================
-           BOTÃO SEGUIR
-        ========================================== */
+        /* BOTÃO SEGUIR */
 
         .follow-btn {
-
             border: none;
 
             background: #ff174f;
-
             color: #fff;
 
-            padding:
-                13px 25px;
+            padding: 13px 25px;
 
             border-radius: 50px;
 
-            font-size:
-                clamp(14px, 1.5vw, 22px);
-
+            font-size: clamp(14px, 1.5vw, 22px);
             font-weight: 800;
 
             cursor: pointer;
 
             transition: .25s;
-
             white-space: nowrap;
-
         }
-
 
         .follow-btn:hover {
-
             transform: scale(1.05);
-
         }
-
 
         .follow-btn.following {
-
             background: #333;
-
             color: #ddd;
-
         }
 
 
-        /* =========================================
+        /* =====================================
            TOPO DIREITO
-        ========================================== */
+        ===================================== */
 
         .top-right-group {
-
             display: flex;
-
             align-items: center;
-
             gap: 18px;
-
         }
-
 
         .avatars-live {
-
             display: flex;
-
             align-items: center;
-
+            padding-left: 8px;
         }
 
-
         .mini-avatar {
-
             width: 45px;
-
             height: 45px;
 
             border-radius: 50%;
-
             overflow: hidden;
 
             margin-left: -10px;
@@ -302,120 +228,83 @@
             border: 2px solid #eab308;
 
             background: #222;
-
         }
-
 
         .mini-avatar:first-child {
-
             margin-left: 0;
-
         }
-
 
         .mini-avatar img {
-
             width: 100%;
-
             height: 100%;
-
             object-fit: cover;
-
+            display: block;
         }
-
 
         .viewer-count {
-
-            font-size:
-                clamp(16px, 1.7vw, 26px);
-
+            font-size: clamp(16px, 1.7vw, 26px);
             font-weight: 700;
-
             white-space: nowrap;
-
         }
-
 
         .close-live {
-
-            font-size:
-                clamp(35px, 3vw, 55px);
-
+            font-size: clamp(35px, 3vw, 55px);
             font-weight: 200;
-
             cursor: pointer;
-
             line-height: 1;
-
         }
 
 
-        /* =========================================
-           VÍDEO - RETANGULAR
-        ========================================== */
+        /* =====================================
+           VÍDEO RETANGULAR
+        ===================================== */
 
         .live-screen {
-
             position: relative;
 
             width: 100%;
-
             aspect-ratio: 16 / 9;
 
             background: #000;
 
             overflow: hidden;
 
+            /* LINHAS RECTAS */
             border-radius: 0;
 
             box-shadow:
-                0 0 0 1px
-                rgba(255,255,255,.08),
-
-                0 20px 60px
-                rgba(0,0,0,.8);
-
+                0 0 0 1px rgba(255,255,255,.08),
+                0 20px 60px rgba(0,0,0,.8);
         }
 
 
+        /* VÍDEO */
+
         .video-background {
-
             position: absolute;
-
             inset: 0;
 
             z-index: 1;
 
             width: 100%;
-
             height: 100%;
-
         }
 
-
         .video-background iframe {
-
             width: 100%;
-
             height: 100%;
 
             border: none;
-
             display: block;
-
         }
 
 
-        /* =========================================
-           SOMBRA SOBRE O VÍDEO
-        ========================================== */
+        /* SOMBRAS */
 
         .live-screen::before {
-
             content: "";
 
             position: absolute;
-
             inset: 0;
 
             z-index: 2;
@@ -426,476 +315,356 @@
 
                 linear-gradient(
                     180deg,
-                    rgba(0,0,0,.50),
-                    transparent 25%
+                    rgba(0,0,0,.48),
+                    transparent 24%
                 ),
 
                 linear-gradient(
                     0deg,
-                    rgba(0,0,0,.45),
-                    transparent 28%
+                    rgba(0,0,0,.42),
+                    transparent 25%
                 ),
 
                 linear-gradient(
                     90deg,
-                    rgba(0,0,0,.35),
-                    transparent 28%,
-                    transparent 72%,
-                    rgba(0,0,0,.15)
+                    rgba(0,0,0,.30),
+                    transparent 35%,
+                    transparent 70%,
+                    rgba(0,0,0,.12)
                 );
-
         }
 
 
-        /* =========================================
-           INTERFACE INTERNA
-        ========================================== */
+        /* =====================================
+           INTERFACE DO VÍDEO
+        ===================================== */
 
         .live-ui {
-
             position: absolute;
-
             inset: 0;
 
             z-index: 3;
 
             pointer-events: none;
-
         }
 
 
-        /* =========================================
+        /* =====================================
            RANKING
-           CANTO SUPERIOR ESQUERDO
-        ========================================== */
+        ===================================== */
 
         .ranking {
-
             position: absolute;
 
             top: 3%;
-
             left: 1.5%;
 
-            background:
-                rgba(0,0,0,.75);
+            background: rgba(0,0,0,.78);
 
-            backdrop-filter:
-                blur(15px);
+            backdrop-filter: blur(15px);
 
-            padding:
-                10px 18px;
+            padding: 9px 17px;
 
             border-radius: 50px;
 
-            font-size:
-                clamp(11px, 1.1vw, 18px);
-
+            font-size: clamp(11px, 1.1vw, 18px);
             font-weight: 700;
 
+            box-shadow:
+                0 5px 20px rgba(0,0,0,.3);
         }
 
 
-        /* =========================================
+        /* =====================================
            EXPLORAR
-           CANTO SUPERIOR DIREITO
-        ========================================== */
+        ===================================== */
 
         .explore {
-
             position: absolute;
 
             top: 3%;
-
             right: 1.5%;
 
-            background:
-                rgba(0,0,0,.65);
+            background: rgba(0,0,0,.72);
 
-            backdrop-filter:
-                blur(15px);
+            backdrop-filter: blur(15px);
 
-            padding:
-                10px 18px;
+            padding: 9px 17px;
 
             border-radius: 50px;
 
-            font-size:
-                clamp(11px, 1.1vw, 18px);
-
+            font-size: clamp(11px, 1.1vw, 18px);
             font-weight: 700;
-
         }
 
 
-        /* =========================================
+        /* =====================================
            LIVE BADGE
-           SUPERIOR DIREITO
-        ========================================== */
+        ===================================== */
 
         .live-badge {
-
             position: absolute;
 
             top: 14%;
-
             right: 1.5%;
 
             display: flex;
-
             align-items: center;
 
-            gap: 15px;
+            gap: 13px;
 
-            padding:
-                14px 20px;
+            padding: 12px 17px;
 
-            background:
-                rgba(8,8,12,.88);
+            background: rgba(8,8,12,.90);
 
-            backdrop-filter:
-                blur(20px);
+            backdrop-filter: blur(20px);
 
-            border-radius: 15px;
+            border-radius: 14px;
 
             box-shadow:
-                0 15px 40px
-                rgba(0,0,0,.5);
-
+                0 15px 40px rgba(0,0,0,.5);
         }
-
 
         .live-text {
-
             display: flex;
-
             flex-direction: column;
-
-            gap: 4px;
-
+            gap: 3px;
         }
-
 
         .live-text strong {
-
-            font-size:
-                clamp(13px, 1.5vw, 23px);
-
+            font-size: clamp(13px, 1.5vw, 23px);
         }
-
 
         .live-text span {
-
             color: #ddd;
-
-            font-size:
-                clamp(10px, 1.1vw, 17px);
-
+            font-size: clamp(10px, 1.1vw, 17px);
         }
-
 
         .tiktok-symbol {
-
-            font-size:
-                clamp(28px, 3vw, 52px);
-
+            font-size: clamp(28px, 3vw, 48px);
         }
 
 
-        /* =========================================
+        /* =====================================
            COMENTÁRIOS
-           ESQUERDA DO VÍDEO
-        ========================================== */
+        ===================================== */
 
         .comments {
-
             position: absolute;
 
-            left: 1.8%;
+            /* MAIS À ESQUERDA */
+            left: 1.5%;
 
-            bottom: 7%;
-
+            /* SOBEM APENAS ATÉ AO MEIO */
+            bottom: 6%;
             width: 43%;
-
-            max-height: 62%;
+            max-height: 48%;
 
             overflow: hidden;
 
             display: flex;
-
             flex-direction: column;
 
-            gap: 9px;
-
+            gap: 7px;
         }
 
-
         .comment {
-
             display: flex;
-
             align-items: flex-start;
 
             opacity: 0;
 
-            transform:
-                translateY(20px);
+            transform: translateY(18px);
 
             animation:
-                commentAppear
-                .5s ease forwards;
-
+                commentAppear .5s ease forwards;
         }
-
 
         .comment-body {
-
             display: flex;
-
             flex-direction: column;
+            gap: 2px;
 
-            gap: 3px;
-
+            width: 100%;
         }
-
 
         .comment-name {
-
             color: #cfcfcf;
 
-            font-size:
-                clamp(11px, 1.15vw, 18px);
+            font-size: clamp(10px, 1.1vw, 17px);
 
             font-weight: 600;
-
         }
 
-
         .comment-message {
-
             color: #fff;
 
-            font-size:
-                clamp(12px, 1.3vw, 21px);
+            font-size: clamp(11px, 1.25vw, 20px);
 
             font-weight: 500;
 
-            line-height: 1.2;
+            line-height: 1.18;
 
             text-shadow:
-                0 2px 8px
-                rgba(0,0,0,.9);
-
+                0 2px 8px rgba(0,0,0,.95);
         }
-
 
         @keyframes commentAppear {
 
             to {
-
                 opacity: 1;
-
-                transform:
-                    translateY(0);
-
+                transform: translateY(0);
             }
 
         }
-
 
         .comment.removing {
 
             animation:
-                commentRemove
-                .4s ease forwards;
+                commentRemove .4s ease forwards;
 
         }
-
 
         @keyframes commentRemove {
 
             to {
-
                 opacity: 0;
-
-                transform:
-                    translateX(-30px);
-
+                transform: translateX(-30px);
             }
 
         }
 
 
-        /* =========================================
-           BARRA LATERAL DIREITA
-        ========================================== */
+        /* =====================================
+           AÇÕES LATERAIS
+        ===================================== */
 
         .right-actions {
-
             position: absolute;
 
             right: 1.5%;
-
-            top: 42%;
+            top: 40%;
 
             display: flex;
-
             flex-direction: column;
 
             align-items: center;
 
-            gap: 15px;
+            gap: 12px;
 
+            pointer-events: auto;
         }
 
-
         .side-action {
-
-            width: 58px;
-
-            height: 58px;
+            width: 55px;
+            height: 55px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
+
+            border: none;
 
             border-radius: 50%;
 
-            background:
-                rgba(0,0,0,.35);
+            background: rgba(0,0,0,.35);
 
-            backdrop-filter:
-                blur(10px);
+            backdrop-filter: blur(10px);
 
-            font-size:
-                clamp(25px, 2.5vw, 42px);
+            font-size: clamp(23px, 2.5vw, 40px);
 
             cursor: pointer;
 
-            pointer-events: auto;
-
             transition: .2s;
-
         }
-
 
         .side-action:hover {
-
-            transform:
-                scale(1.12);
-
+            transform: scale(1.12);
         }
 
 
-        /* =========================================
-           CORAÇÕES
-        ========================================== */
+        /* =====================================
+           CORAÇÕES / PRESENTES / ROSAS
+        ===================================== */
 
         .hearts-container {
-
             position: absolute;
 
             right: 1.5%;
-
-            bottom: 5%;
+            bottom: 4%;
 
             width: 100px;
-
-            height: 65%;
+            height: 70%;
 
             overflow: hidden;
 
             pointer-events: none;
-
         }
 
-
         .heart {
-
             position: absolute;
 
             bottom: 0;
 
-            font-size:
-                clamp(25px, 3vw, 55px);
+            font-size: clamp(25px, 3vw, 55px);
 
             animation:
-                heartFloat
-                4s linear forwards;
+                heartFloat 4s linear forwards;
 
             filter:
                 drop-shadow(
                     0 5px 10px
                     rgba(0,0,0,.5)
                 );
-
         }
-
 
         @keyframes heartFloat {
 
             0% {
-
                 transform:
                     translateY(0)
                     scale(.5);
 
                 opacity: 0;
-
             }
-
 
             15% {
-
                 opacity: 1;
-
             }
 
-
             100% {
-
                 transform:
                     translateY(-500px)
                     translateX(var(--move))
-                    scale(1.4);
+                    scale(1.3);
 
                 opacity: 0;
-
             }
 
         }
 
 
-        /* =========================================
+        /* =====================================
            BARRA INFERIOR
-           FICA ABAIXO DO VÍDEO
-        ========================================== */
+        ===================================== */
 
         .live-bottom-bar {
-
             width: 100%;
 
             display: flex;
-
             align-items: center;
 
             justify-content: space-between;
 
-            gap: 25px;
+            gap: 20px;
 
-            padding: 16px 5px 5px;
-
+            padding: 14px 5px 5px;
         }
 
-
         .comment-input {
-
             width: 58%;
 
             border: none;
-
             outline: none;
 
             background:
@@ -907,122 +676,90 @@
 
             color: #fff;
 
-            padding:
-                18px 25px;
+            padding: 17px 24px;
 
             border-radius: 50px;
 
-            font-size:
-                clamp(14px, 1.4vw, 22px);
-
+            font-size: clamp(13px, 1.4vw, 21px);
         }
-
 
         .comment-input::placeholder {
-
             color: #aaa;
-
         }
 
 
-        .bottom-actions {
+        /* AÇÕES INFERIORES */
 
+        .bottom-actions {
             display: flex;
 
             align-items: center;
 
             justify-content: flex-end;
 
-            gap:
-                clamp(15px, 3vw, 50px);
+            gap: clamp(12px, 2.8vw, 45px);
 
             flex: 1;
-
         }
 
-
         .bottom-action {
-
             border: none;
-
             background: transparent;
 
             color: #ddd;
 
             display: flex;
-
             flex-direction: column;
 
             align-items: center;
 
-            gap: 5px;
+            gap: 4px;
 
             cursor: pointer;
 
             font-family: inherit;
 
             transition: .2s;
-
         }
-
 
         .bottom-action:hover {
-
-            transform:
-                translateY(-4px);
-
+            transform: translateY(-4px);
         }
-
 
         .bottom-icon {
-
-            font-size:
-                clamp(28px, 3vw, 45px);
-
+            font-size: clamp(27px, 3vw, 43px);
             line-height: 1;
-
         }
-
 
         .bottom-action span {
-
-            font-size:
-                clamp(10px, 1vw, 16px);
-
+            font-size: clamp(9px, 1vw, 16px);
         }
 
 
-        /* =========================================
+        /* =====================================
            BOTÃO DELAY
-        ========================================== */
+        ===================================== */
 
         #btnDelay {
 
             display: none;
 
-            width:
-                calc(100% - 30px);
-
+            width: calc(100% - 30px);
             max-width: 1000px;
 
-            margin:
-                35px auto
-                50px;
+            margin: 35px auto 50px;
 
-            padding:
-                22px 30px;
+            padding: 22px 30px;
 
             border: none;
 
             border-radius: 50px;
 
-            background:
-                var(--gold);
+            background: var(--gold);
 
             color: #000;
 
-            font-size:
-                clamp(17px, 2vw, 27px);
+            font-size: clamp(17px, 2vw, 27px);
 
             font-weight: 900;
 
@@ -1033,319 +770,191 @@
             box-shadow:
                 0 15px 40px
                 rgba(212,175,55,.25);
-
         }
-
 
         .animate-bounce {
-
-            animation:
-                bounce
-                1s infinite;
-
+            animation: bounce 1s infinite;
         }
-
 
         @keyframes bounce {
 
             0%,
             100% {
-
-                transform:
-                    translateY(0);
-
+                transform: translateY(0);
             }
 
-
             50% {
-
-                transform:
-                    translateY(-10px);
-
+                transform: translateY(-10px);
             }
 
         }
 
 
-        /* =========================================
-           MOBILE
-        ========================================== */
+        /* =====================================
+           TABLET
+        ===================================== */
 
         @media(max-width: 900px) {
 
             .live-topbar {
-
                 gap: 10px;
-
             }
-
 
             .top-right-group {
-
                 gap: 10px;
-
             }
-
 
             .mini-avatar {
-
                 width: 34px;
-
                 height: 34px;
-
             }
-
 
             .avatar-principal {
-
                 width: 46px;
-
                 height: 46px;
-
             }
-
 
             .follow-btn {
-
-                padding:
-                    10px 16px;
-
+                padding: 10px 16px;
             }
-
 
             .comments {
-
-                width: 50%;
-
+                width: 48%;
+                max-height: 46%;
             }
-
-
-            .right-actions {
-
-                gap: 8px;
-
-            }
-
 
             .side-action {
-
                 width: 44px;
-
                 height: 44px;
-
             }
 
         }
 
 
+        /* =====================================
+           MOBILE
+        ===================================== */
+
         @media(max-width: 650px) {
 
-            .live-container {
-
-                padding:
-                    0 5px 20px;
-
+            .titulo-topo {
+                padding: 15px 10px;
             }
 
+            .live-container {
+                padding: 0 5px 20px;
+            }
 
             .live-topbar {
-
-                padding:
-                    8px 3px 10px;
-
+                padding: 8px 3px 10px;
+                gap: 6px;
             }
-
 
             .profile-name {
-
-                font-size: 13px;
-
+                font-size: 12px;
             }
-
 
             .profile-likes {
-
-                font-size: 10px;
-
+                font-size: 9px;
             }
-
 
             .avatar-principal {
-
                 width: 34px;
-
                 height: 34px;
-
             }
-
 
             .follow-btn {
-
-                padding:
-                    8px 11px;
-
-                font-size: 11px;
-
+                padding: 8px 10px;
+                font-size: 10px;
             }
-
 
             .mini-avatar {
-
                 width: 24px;
-
                 height: 24px;
-
                 margin-left: -6px;
-
             }
-
 
             .viewer-count {
-
-                font-size: 13px;
-
+                font-size: 11px;
             }
-
 
             .close-live {
-
-                font-size: 32px;
-
+                font-size: 28px;
             }
-
 
             .ranking,
             .explore {
-
-                padding:
-                    6px 10px;
-
-                font-size: 9px;
-
+                padding: 6px 9px;
+                font-size: 8px;
             }
-
 
             .live-badge {
-
-                top: 15%;
-
-                padding:
-                    7px 9px;
-
-                gap: 6px;
-
+                top: 14%;
+                padding: 7px 9px;
+                gap: 5px;
             }
-
 
             .live-text strong {
-
-                font-size: 9px;
-
+                font-size: 8px;
             }
-
 
             .live-text span {
-
-                font-size: 7px;
-
+                font-size: 6px;
             }
-
 
             .tiktok-symbol {
-
-                font-size: 23px;
-
+                font-size: 20px;
             }
-
 
             .comments {
-
                 left: 2%;
-
-                width: 56%;
-
+                width: 55%;
                 bottom: 5%;
-
+                max-height: 45%;
                 gap: 5px;
-
             }
-
 
             .comment-name {
-
-                font-size: 8px;
-
+                font-size: 7px;
             }
-
 
             .comment-message {
-
-                font-size: 9px;
-
+                font-size: 8px;
             }
-
 
             .right-actions {
-
                 right: 1%;
-
-                top: 42%;
-
+                top: 40%;
                 gap: 5px;
-
             }
-
 
             .side-action {
-
-                width: 30px;
-
-                height: 30px;
-
-                font-size: 18px;
-
+                width: 29px;
+                height: 29px;
+                font-size: 17px;
             }
-
 
             .live-bottom-bar {
-
-                gap: 8px;
-
-                padding-top: 10px;
-
+                gap: 7px;
+                padding-top: 9px;
             }
-
 
             .comment-input {
-
-                width: 48%;
-
-                padding:
-                    11px 13px;
-
-                font-size: 10px;
-
+                width: 45%;
+                padding: 10px 12px;
+                font-size: 9px;
             }
-
 
             .bottom-actions {
-
-                gap: 10px;
-
+                gap: 9px;
             }
-
 
             .bottom-icon {
-
-                font-size: 22px;
-
+                font-size: 20px;
             }
 
-
             .bottom-action span {
-
-                font-size: 7px;
-
+                font-size: 6px;
             }
 
         }
@@ -1358,9 +967,7 @@
 <body>
 
 
-    <!-- =========================================
-         TÍTULO
-    ========================================== -->
+    <!-- TÍTULO -->
 
     <div class="titulo-topo">
 
@@ -1372,39 +979,33 @@
 
 
 
-    <!-- =========================================
-         CONTAINER PRINCIPAL
-    ========================================== -->
+    <!-- CONTAINER -->
 
     <div class="live-container">
 
         <div class="live-wrapper">
 
 
-
-            <!-- =========================================
-                 BARRA SUPERIOR - ACIMA DO VÍDEO
-            ========================================== -->
+            <!-- =====================================
+                 BARRA SUPERIOR
+            ===================================== -->
 
             <div class="live-topbar">
 
 
+                <!-- ESQUERDA -->
+
                 <div class="top-left-group">
 
-
-                    <!-- LOGO PRINCIPAL -->
 
                     <div class="avatar-principal">
 
                         <img
                             src="logo-sou-angolano.png"
-                            alt="Sou Angolano"
-                        >
+                            alt="Sou Angolano">
 
                     </div>
 
-
-                    <!-- NOME -->
 
                     <div class="profile-info">
 
@@ -1419,35 +1020,32 @@
                     </div>
 
 
-                    <!-- SEGUIR -->
-
                     <button
                         class="follow-btn"
-                        id="followBtn"
-                    >
-                        + Seguir
-                    </button>
+                        id="followBtn">
 
+                        + Seguir
+
+                    </button>
 
                 </div>
 
 
 
-                <!-- TOPO DIREITO -->
+                <!-- DIREITA -->
 
                 <div class="top-right-group">
 
 
-                    <!-- 3 AVATARES -->
+                    <!-- 3 IMAGENS -->
 
                     <div class="avatars-live">
 
                         <div class="mini-avatar">
 
                             <img
-                                src="https://thispersondoesnotexist.com/?person1"
-                                alt="Participante"
-                            >
+                                src="participante1.jpg"
+                                alt="Participante 1">
 
                         </div>
 
@@ -1455,9 +1053,8 @@
                         <div class="mini-avatar">
 
                             <img
-                                src="https://thispersondoesnotexist.com/?person2"
-                                alt="Participante"
-                            >
+                                src="participante2.jpg"
+                                alt="Participante 2">
 
                         </div>
 
@@ -1465,14 +1062,12 @@
                         <div class="mini-avatar">
 
                             <img
-                                src="https://thispersondoesnotexist.com/?person3"
-                                alt="Participante"
-                            >
+                                src="participante3.jpg"
+                                alt="Participante 3">
 
                         </div>
 
                     </div>
-
 
 
                     <!-- ESPECTADORES -->
@@ -1487,31 +1082,26 @@
                     </div>
 
 
-
                     <!-- FECHAR -->
 
                     <div class="close-live">
-
                         ×
-
                     </div>
 
-
                 </div>
-
 
             </div>
 
 
 
-            <!-- =========================================
-                 TELA DO VÍDEO
-            ========================================== -->
+            <!-- =====================================
+                 VÍDEO
+            ===================================== -->
 
             <div class="live-screen">
 
 
-                <!-- VÍDEO -->
+                <!-- VÍDEO PANDA -->
 
                 <div class="video-background">
 
@@ -1541,7 +1131,6 @@
                     </div>
 
 
-
                     <!-- EXPLORAR -->
 
                     <div class="explore">
@@ -1551,16 +1140,13 @@
                     </div>
 
 
-
                     <!-- LIVE -->
 
                     <div class="live-badge">
 
                         <div class="live-text">
 
-                            <strong>
-                                LIVE
-                            </strong>
+                            <strong>LIVE</strong>
 
                             <span>
                                 Junte-se a nós!
@@ -1568,15 +1154,11 @@
 
                         </div>
 
-
                         <div class="tiktok-symbol">
-
                             🎵
-
                         </div>
 
                     </div>
-
 
 
                     <!-- COMENTÁRIOS -->
@@ -1587,42 +1169,37 @@
                     </div>
 
 
-
                     <!-- AÇÕES LATERAIS -->
 
                     <div class="right-actions">
 
+
                         <button
                             class="side-action"
-                            id="heartButton"
-                            title="Curtir">
+                            id="heartButton">
 
                             ❤️
 
                         </button>
 
 
-                        <button
-                            class="side-action"
-                            title="Curtir">
+                        <button class="side-action">
 
                             💕
+
                         </button>
 
 
                         <button
                             class="side-action"
-                            id="sideShareButton"
-                            title="Partilhar">
+                            id="sideShareButton">
 
                             ↗
 
                         </button>
 
 
-                        <button
-                            class="side-action"
-                            title="Mais reações">
+                        <button class="side-action">
 
                             💗
 
@@ -1631,8 +1208,7 @@
                     </div>
 
 
-
-                    <!-- CORAÇÕES FLUTUANTES -->
+                    <!-- ANIMAÇÕES -->
 
                     <div
                         id="heartsContainer"
@@ -1646,9 +1222,9 @@
 
 
 
-            <!-- =========================================
-                 BARRA INFERIOR - ABAIXO DO VÍDEO
-            ========================================== -->
+            <!-- =====================================
+                 BARRA INFERIOR
+            ===================================== -->
 
             <div class="live-bottom-bar">
 
@@ -1656,9 +1232,7 @@
                 <input
                     type="text"
                     class="comment-input"
-                    placeholder="Adicionar comentário..."
-                >
-
+                    placeholder="Adicionar comentário...">
 
 
                 <div class="bottom-actions">
@@ -1670,9 +1244,7 @@
                             👥
                         </div>
 
-                        <span>
-                            Vários
-                        </span>
+                        <span>Vários</span>
 
                     </button>
 
@@ -1686,9 +1258,7 @@
                             🌹
                         </div>
 
-                        <span>
-                            Rosa
-                        </span>
+                        <span>Rosa</span>
 
                     </button>
 
@@ -1702,9 +1272,7 @@
                             🎁
                         </div>
 
-                        <span>
-                            Presente
-                        </span>
+                        <span>Presente</span>
 
                     </button>
 
@@ -1718,9 +1286,7 @@
                             ↗
                         </div>
 
-                        <span>
-                            Partilhar
-                        </span>
+                        <span>Partilhar</span>
 
                     </button>
 
@@ -1732,15 +1298,12 @@
                             •••
                         </div>
 
-                        <span>
-                            Mais
-                        </span>
+                        <span>Mais</span>
 
                     </button>
 
 
                 </div>
-
 
             </div>
 
@@ -1751,9 +1314,7 @@
 
 
 
-    <!-- =========================================
-         BOTÃO DELAY
-    ========================================== -->
+    <!-- BOTÃO DELAY -->
 
     <button
         id="btnDelay"
@@ -1768,9 +1329,9 @@
     <script>
 
 
-        /* =========================================
+        /* =====================================
            COMENTÁRIOS
-        ========================================== */
+        ===================================== */
 
         const comments = [
 
@@ -1796,7 +1357,7 @@
 
             {
                 name: "pedro_santos",
-                message: "Entrei agora na LIVE 👋"
+                message: "Entrou na LIVE 👋"
             },
 
             {
@@ -1842,18 +1403,12 @@
             {
                 name: "fernanda_kz",
                 message: "Melhor LIVE que assisti hoje ❤️"
-            },
-
-            {
-                name: "ricardo_27",
-                message: "Partilhei com meus amigos! 🔥"
             }
 
         ];
 
 
         let commentIndex = 0;
-
 
         const commentsContainer =
             document.getElementById(
@@ -1863,59 +1418,40 @@
 
         function addComment() {
 
-
-            const data =
-                comments[commentIndex];
-
+            const data = comments[commentIndex];
 
             const comment =
                 document.createElement("div");
 
-
-            comment.className =
-                "comment";
-
+            comment.className = "comment";
 
             comment.innerHTML = `
-
                 <div class="comment-body">
 
                     <div class="comment-name">
-
                         ${data.name}
-
                     </div>
 
                     <div class="comment-message">
-
                         ${data.message}
-
                     </div>
 
                 </div>
-
             `;
 
-
-            commentsContainer.appendChild(
-                comment
-            );
+            commentsContainer.appendChild(comment);
 
 
-            if (
-                commentsContainer.children.length > 5
-            ) {
+            /* MANTÉM APENAS 5 */
+
+            if (commentsContainer.children.length > 5) {
 
                 const firstComment =
                     commentsContainer.firstElementChild;
 
+                firstComment.classList.add("removing");
 
-                firstComment.classList.add(
-                    "removing"
-                );
-
-
-                setTimeout(function() {
+                setTimeout(function () {
 
                     firstComment.remove();
 
@@ -1926,66 +1462,44 @@
 
             commentIndex++;
 
-
-            if (
-                commentIndex >= comments.length
-            ) {
-
+            if (commentIndex >= comments.length) {
                 commentIndex = 0;
-
             }
 
         }
 
 
-        setTimeout(
-            addComment,
-            1000
-        );
+        setTimeout(addComment, 1000);
 
-
-        setInterval(
-            addComment,
-            3500
-        );
+        setInterval(addComment, 3500);
 
 
 
-        /* =========================================
-           SEGUIR
-        ========================================== */
+        /* =====================================
+           BOTÃO SEGUIR
+        ===================================== */
 
         const followBtn =
-            document.getElementById(
-                "followBtn"
-            );
+            document.getElementById("followBtn");
 
 
         followBtn.addEventListener(
             "click",
-            function() {
+            function () {
 
                 if (
-                    this.classList.contains(
-                        "following"
-                    )
+                    this.classList.contains("following")
                 ) {
 
-                    this.classList.remove(
-                        "following"
-                    );
+                    this.classList.remove("following");
 
-                    this.textContent =
-                        "+ Seguir";
+                    this.textContent = "+ Seguir";
 
                 } else {
 
-                    this.classList.add(
-                        "following"
-                    );
+                    this.classList.add("following");
 
-                    this.textContent =
-                        "✓ Seguindo";
+                    this.textContent = "✓ Seguindo";
 
                 }
 
@@ -1994,15 +1508,12 @@
 
 
 
-        /* =========================================
+        /* =====================================
            ESPECTADORES
-        ========================================== */
+        ===================================== */
 
         const viewerCount =
-            document.getElementById(
-                "viewerCount"
-            );
-
+            document.getElementById("viewerCount");
 
         let viewers = 2300;
 
@@ -2010,25 +1521,18 @@
         function updateViewers() {
 
             const variation =
-                Math.floor(
-                    Math.random() * 180
-                ) - 60;
-
+                Math.floor(Math.random() * 180) - 60;
 
             viewers += variation;
 
 
             if (viewers < 2100) {
-
                 viewers = 2100;
-
             }
 
 
             if (viewers > 4800) {
-
                 viewers = 4800;
-
             }
 
 
@@ -2036,37 +1540,25 @@
 
                 viewers >= 1000
 
-                    ?
+                    ? (viewers / 1000)
+                        .toFixed(1)
+                        .replace(".0", "") + "K"
 
-                    (viewers / 1000)
-                    .toFixed(1)
-                    .replace(".0", "")
-
-                    + "K"
-
-                    :
-
-                    viewers;
+                    : viewers;
 
         }
 
 
-        setInterval(
-            updateViewers,
-            2500
-        );
+        setInterval(updateViewers, 2500);
 
 
 
-        /* =========================================
+        /* =====================================
            CURTIDAS
-        ========================================== */
+        ===================================== */
 
         const likesCount =
-            document.getElementById(
-                "likesCount"
-            );
-
+            document.getElementById("likesCount");
 
         let likes = 3200;
 
@@ -2074,268 +1566,163 @@
         function updateLikes() {
 
             likes +=
-                Math.floor(
-                    Math.random() * 25
-                ) + 5;
+                Math.floor(Math.random() * 25) + 5;
 
 
             likesCount.textContent =
 
                 likes >= 1000
 
-                    ?
+                    ? (likes / 1000)
+                        .toFixed(1)
+                        .replace(".0", "") + "K"
 
-                    (likes / 1000)
-                    .toFixed(1)
-                    .replace(".0", "")
-
-                    + "K"
-
-                    :
-
-                    likes;
+                    : likes;
 
         }
 
 
-        setInterval(
-            updateLikes,
-            4000
-        );
+        setInterval(updateLikes, 4000);
 
 
 
-        /* =========================================
+        /* =====================================
            CORAÇÕES
-        ========================================== */
+        ===================================== */
 
         const heartsContainer =
-            document.getElementById(
-                "heartsContainer"
-            );
+            document.getElementById("heartsContainer");
 
 
         const heartEmojis = [
-
             "❤️",
             "💕",
             "💗",
             "💖",
             "❤️"
-
         ];
 
 
-        function createHeart() {
+        function createFloatingItem(emoji) {
 
-
-            const heart =
+            const item =
                 document.createElement("div");
 
-
-            heart.className =
-                "heart";
+            item.className = "heart";
 
 
-            heart.textContent =
-
-                heartEmojis[
-                    Math.floor(
-                        Math.random()
-                        *
-                        heartEmojis.length
-                    )
-                ];
+            item.textContent = emoji;
 
 
-            const randomLeft =
-                Math.random() * 50;
+            item.style.left =
+                Math.random() * 50 + "px";
 
 
             const randomMove =
-                (
-                    Math.random() * 100
-                    - 50
-                )
-                + "px";
+                (Math.random() * 100 - 50) + "px";
 
 
-            heart.style.left =
-                randomLeft + "px";
-
-
-            heart.style.setProperty(
+            item.style.setProperty(
                 "--move",
                 randomMove
             );
 
 
-            heartsContainer.appendChild(
-                heart
-            );
+            heartsContainer.appendChild(item);
 
 
-            setTimeout(function() {
+            setTimeout(function () {
 
-                heart.remove();
+                item.remove();
 
             }, 4000);
 
         }
 
 
-        setInterval(
-            createHeart,
-            900
-        );
+        function createHeart() {
+
+            const emoji =
+                heartEmojis[
+                    Math.floor(
+                        Math.random() *
+                        heartEmojis.length
+                    )
+                ];
+
+            createFloatingItem(emoji);
+
+        }
+
+
+        setInterval(createHeart, 1000);
 
 
         document
-        .getElementById("heartButton")
-        .addEventListener(
-            "click",
-            function() {
+            .getElementById("heartButton")
+            .addEventListener(
+                "click",
+                function () {
 
-                createHeart();
-
-                createHeart();
-
-                createHeart();
-
-            }
-        );
-
-
-
-        /* =========================================
-           ROSA
-        ========================================== */
-
-        document
-        .getElementById("roseButton")
-        .addEventListener(
-            "click",
-            function() {
-
-                for (
-                    let i = 0;
-                    i < 5;
-                    i++
-                ) {
-
-                    setTimeout(
-                        createRose,
-                        i * 150
-                    );
+                    createHeart();
+                    createHeart();
+                    createHeart();
 
                 }
-
-            }
-        );
-
-
-        function createRose() {
-
-
-            const rose =
-                document.createElement("div");
-
-
-            rose.className =
-                "heart";
-
-
-            rose.textContent =
-                "🌹";
-
-
-            rose.style.left =
-                Math.random() * 50
-                + "px";
-
-
-            rose.style.setProperty(
-                "--move",
-                (
-                    Math.random() * 100
-                    - 50
-                )
-                + "px"
             );
 
 
-            heartsContainer.appendChild(
-                rose
-            );
 
-
-            setTimeout(function() {
-
-                rose.remove();
-
-            }, 4000);
-
-        }
-
-
-
-        /* =========================================
-           PRESENTE
-        ========================================== */
+        /* =====================================
+           ROSA
+        ===================================== */
 
         document
-        .getElementById("giftButton")
-        .addEventListener(
-            "click",
-            function() {
+            .getElementById("roseButton")
+            .addEventListener(
+                "click",
+                function () {
 
-                const gift =
-                    document.createElement("div");
+                    for (let i = 0; i < 5; i++) {
 
+                        setTimeout(
+                            function () {
+                                createFloatingItem("🌹");
+                            },
+                            i * 150
+                        );
 
-                gift.className =
-                    "heart";
+                    }
 
-
-                gift.textContent =
-                    "🎁";
-
-
-                gift.style.left =
-                    "20px";
-
-
-                gift.style.setProperty(
-                    "--move",
-                    "30px"
-                );
-
-
-                heartsContainer.appendChild(
-                    gift
-                );
-
-
-                setTimeout(function() {
-
-                    gift.remove();
-
-                }, 4000);
-
-            }
-        );
+                }
+            );
 
 
 
-        /* =========================================
+        /* =====================================
+           PRESENTE
+        ===================================== */
+
+        document
+            .getElementById("giftButton")
+            .addEventListener(
+                "click",
+                function () {
+
+                    createFloatingItem("🎁");
+
+                }
+            );
+
+
+
+        /* =====================================
            PARTILHAR
-        ========================================== */
+        ===================================== */
 
         async function shareLive() {
 
-            if (
-                navigator.share
-            ) {
+            if (navigator.share) {
 
                 try {
 
@@ -2362,9 +1749,23 @@
 
             } else {
 
-                alert(
-                    "Copie o link da página para partilhar."
-                );
+                try {
+
+                    await navigator.clipboard.writeText(
+                        window.location.href
+                    );
+
+                    alert(
+                        "Link copiado para partilhar!"
+                    );
+
+                } catch (error) {
+
+                    alert(
+                        "Copie o link da página para partilhar."
+                    );
+
+                }
 
             }
 
@@ -2372,31 +1773,31 @@
 
 
         document
-        .getElementById("shareButton")
-        .addEventListener(
-            "click",
-            shareLive
-        );
+            .getElementById("shareButton")
+            .addEventListener(
+                "click",
+                shareLive
+            );
 
 
         document
-        .getElementById("sideShareButton")
-        .addEventListener(
-            "click",
-            shareLive
-        );
+            .getElementById("sideShareButton")
+            .addEventListener(
+                "click",
+                shareLive
+            );
 
 
 
-        /* =========================================
+        /* =====================================
            DELAY DO BOTÃO
 
-           220000ms = 3 MINUTOS E 40 SEGUNDOS
-        ========================================== */
+           220000ms = 3min40seg
+        ===================================== */
 
         document.addEventListener(
             "DOMContentLoaded",
-            function() {
+            function () {
 
                 const botao =
                     document.getElementById(
@@ -2404,16 +1805,13 @@
                     );
 
 
-                const tempoDelay =
-                    220000;
+                const tempoDelay = 220000;
 
 
                 setTimeout(
-                    function() {
+                    function () {
 
-                        botao.style.display =
-                            "block";
-
+                        botao.style.display = "block";
 
                         botao.classList.add(
                             "animate-bounce"
@@ -2429,6 +1827,6 @@
 
     </script>
 
-
 </body>
+
 </html>
